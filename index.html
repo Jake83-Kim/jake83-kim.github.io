@@ -1,0 +1,617 @@
+<head>
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+
+  <style>
+    * {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+
+  font-family: 'Lato', sans-serif;
+}
+  
+body{
+    display: flex;
+}
+ 
+    body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column; /* ❶ */ 
+    justify-content: top; /* ❷ */
+}
+a[class*="btn"] {text-decoration: none;}
+input[class*="btn"], 
+button[class*="btn"] {border: 0;}
+/* Here you can change the button sizes */
+.btn.large, 
+.btn-two.large, 
+.btn-effect.large {
+  padding: 20px 40px; 
+  font-size: 22px;
+}
+.btn.small, 
+.btn-two.small, 
+.btn-gradient.small, 
+.btn-effect.small {
+  padding: 8px 18px;  
+  font-size: 14px;
+}
+.btn.mini, 
+.btn-two.mini, 
+.btn-gradient.mini, 
+.btn-effect.mini {
+  padding: 4px 12px;  
+  font-size: 12px;
+}
+.btn.block, 
+.btn-two.block, 
+.btn-gradient.block, 
+.btn-effect.block {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.color {
+  width: 350px;
+  margin: 0 auto;
+}
+.color li {
+  margin: 0 15px 0 0;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 100%;
+}
+.color .red    {background: #fa5a5a;}
+.color .yellow {background: #f0d264;}
+.color .green  {background: #82c8a0;}
+.color .cyan   {background: #7fccde;}
+.color .blue   {background: #6698cb;}
+.color .purple {background: #cb99c5;}
+
+.rounded {
+  border-radius: 10px;
+}
+.btn, .btn-two {
+  margin: 3px;
+}
+.btn-two {
+  color: white; 
+  padding: 5px 8px;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,0.21);
+  border-bottom-color: rgba(0,0,0,0.34);
+  text-shadow:0 1px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+              0 2px 0 -1px rgba(0,0,0,0.13), 
+              0 3px 0 -1px rgba(0,0,0,0.08), 
+              0 3px 13px -1px rgba(0,0,0,0.21);
+}
+.btn-two:active {
+  top: 1px;
+  border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+  position: relative;
+}
+.btn.blue, .btn-two.blue     {background-color: #7fb1bf;}
+.btn.green, .btn-two.green   {background-color: #9abf7f;}
+.btn.red, .btn-two.red       {background-color: #fa5a5a;}
+.btn.purple, .btn-two.purple {background-color: #cb99c5;}
+.btn.cyan, .btn-two.cyan     {background-color: #7fccde;}
+.btn.yellow, .btn-two.yellow {background-color: #f0d264;}
+/* color classes for .btn */
+.btn.blue {box-shadow: 0px 4px #74a3b0;}
+.btn.blue:active {box-shadow: 0 0 #74a3b0; background-color: #709CA8;}
+
+.btn.green {box-shadow: 0px 4px 0px #87a86f;}
+.btn.green:active {box-shadow: 0 0 #87a86f; background-color: #87a86f;}
+
+.btn.red {box-shadow:0px 4px 0px #E04342;}
+.btn.red:active {box-shadow: 0 0 #ff4c4b; background-color: #ff4c4b;}
+
+.btn.purple {box-shadow:0px 4px 0px #AD83A8;}
+.btn.purple:active {box-shadow: 0 0 #BA8CB5; background-color: #BA8CB5;}
+
+.btn.cyan {box-shadow:0px 4px 0px #73B9C9;}
+.btn.cyan:active {box-shadow: 0 0 #73B9C9; background-color: #70B4C4;}
+
+.btn.yellow {box-shadow:0px 4px 0px #D1B757;}
+.btn.yellow:active {box-shadow: 0 0 #ff4c4b; background-color: #D6BB59;}
+
+h4{    
+    padding-left: 20px;
+    
+    margin: 0px;
+    
+    border-bottom: 1px solid #73B9C9;
+    border-top: 1px solid #73B9C9;
+    background-color: #709CA8;
+    color: White;
+}
+    .box1 {
+    float:left; 
+    width:180px; 
+    margin-left: 50px;
+    font-size: 12px;
+    text-align: left;  
+    color:#3b7c10;
+    font-weight: bold;
+    height:100%; 
+    line-height: 22px;
+}
+    
+.box2 {
+    margin-left: 50px;
+    padding-bottom: 5px;
+    display:inline-block; 
+    width:Auto; 
+    height:100%; 
+    color:red;
+    
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    }  
+    .header {
+        padding-left: 10px;
+        padding-right: 140px;
+        padding-bottom: 10px;
+        /* position: fixed; */
+        background: white;
+        text-align: left;
+        }
+  
+.bodys {
+       
+
+       border: 1px solid #73B9C9;; width: 100%; height:300px; overflow-y: scroll;
+       
+
+-ms-overflow-style: none; /* 인터넷 익스플로러 */
+scrollbar-width: none; /* 파이어폭스 */
+       /* 생략 */
+   }
+   .bodys::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+   .fill_set {
+       
+
+      padding-bottom: 10px;
+   }
+
+  </style>
+   
+</head>
+<body>
+  
+    <div class="header">
+
+            <a class="btn-two blue rounded" href="#scrollspyHeading1">ㄱ</a>
+            <a class="btn-two green rounded" href="#scrollspyHeading2">ㄴ</a>
+            <a class="btn-two red rounded" href="#scrollspyHeading3">ㄷ</a>
+            <a class="btn-two purple rounded" href="#scrollspyHeading4">ㄹ</a>
+            <a class="btn-two cyan rounded" href="#scrollspyHeading5">ㅁ</a>
+            <a class="btn-two yellow rounded" href="#scrollspyHeading6">ㅂ</a>
+            <a class="btn-two blue rounded" href="#scrollspyHeading7">ㅃ</a>
+            <a class="btn-two green rounded" href="#scrollspyHeading8">ㅅ</a>
+            <a class="btn-two red rounded" href="#scrollspyHeading9">ㅇ</a>
+            <a class="btn-two purple rounded" href="#scrollspyHeading10">ㅈ</a>
+            <a class="btn-two cyan rounded" href="#scrollspyHeading11">ㅊ</a>
+            <a class="btn-two green rounded" href="#scrollspyHeading12">ㅋ</a>
+            <a class="btn-two yellow rounded" href="#scrollspyHeading13">ㅌ</a>
+            <a class="btn-two blue rounded" href="#scrollspyHeading14">ㅍ</a>
+            <a class="btn-two green rounded" href="#scrollspyHeading15">ㅎ</a>
+    </div>
+    
+    <div class="bodys">
+    <div id="scrollspyHeading1" class="fill_set">
+        <h4  >ㄱ</h4>
+        <div >
+            <div class="box1" >
+                갈색 쥐가 27마리…. 몇 마리?          
+            </div>
+            <div class="box2" >
+                46            
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                고통에서 환희, 고뇌의 여제
+            </div>
+            <div class="box2" >
+                안다리엘
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                고통의 군주와 구더기 왕
+            </div>
+            <div class="box2" >
+                두리엘
+            </div>        
+        </div>
+    </div>
+    <div id="scrollspyHeading2" class="fill_set">
+        <h4 >ㄴ</h4>
+        <div>
+            <div class="box1" >
+                나는 보이지 않는 눈        
+            </div>
+            <div class="box2" >
+                바늘            
+            </div>
+        </div>
+  
+        <div>
+            <div class="box1" >
+                나는 소리 없이 떨어질 수 
+            </div>
+            <div class="box2" >
+                밤
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                나의 뾰족한 털은
+            </div>
+            <div class="box2" >
+                붓
+            </div>        
+        </div>
+   
+        <div>
+            <div class="box1" >
+                너무나도 갸날프기에 늘 속삭임
+            </div>
+            <div class="box2" >
+                침묵
+            </div>        
+        </div>
+    </div>
+    <div id="scrollspyHeading3" class="fill_set">
+        <h4 >ㄷ</h4>
+        <div>
+            <div class="box1" >
+                다음 중 대악마에 해당  
+            </div>
+            <div class="box2" >
+                아즈모단            
+            </div>
+        </div>
+  
+        <div>
+            <div class="box1" >
+                대악마 중 최연장자이며, 증오
+            </div>
+            <div class="box2" >
+                메피스토
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                대악마 중 가장 어리지만
+            </div>
+            <div class="box2" >
+                디아블로
+            </div>        
+        </div>
+   
+        <div>
+            <div class="box1" >
+                두 번째 불멸자
+            </div>
+            <div class="box2" >
+                아키바
+            </div>        
+        </div>
+
+        <div>
+            <div class="box1" >
+                드높은 천상의 천사가
+            </div>
+            <div class="box2" >
+                수정회랑
+            </div>        
+        </div>
+
+        <div>
+            <div class="box1" >
+                드루이드에게 가르침을 전수한
+            </div>
+            <div class="box2" >
+                바실리
+            </div>        
+        </div>
+    </div>
+
+    <div id="scrollspyHeading4" class="fill_set">
+        <h4 >ㄹ</h4>
+    </div>
+    <div id="scrollspyHeading5" class="fill_set">
+        <h4 >ㅁ</h4>
+        <div>
+            <div class="box1" >
+                만물을 통틀어 가장 위대한
+            </div>
+            <div class="box2" >
+                임페리우스
+            </div>        
+        </div>
+
+        <div>
+            <div class="box1" >
+                모든 야만용사의 숭배
+            </div>
+            <div class="box2" >
+                불카토스
+            </div>        
+        </div>      
+    </div>
+    <div id="scrollspyHeading6" class="fill_set">
+        <h4 >ㅂ</h4>
+        <div>
+            <div class="box1" >
+                불타는 지옥에서 태어난
+            </div>
+
+            <div class="box2" >
+                7
+            </div>
+        </div>
+    </div>
+    <div id="scrollspyHeading7" class="fill_set">
+        <h4 >ㅃ</h4>
+        <div>
+            <div class="box1" >
+                빼앗긴 것이 많을 수록
+            </div>
+
+            <div class="box2" >
+            발자국
+            </div>
+        </div>
+    </div>
+    <div id="scrollspyHeading8" class="fill_set">
+        <h4 >ㅅ</h4>
+        <div>
+            <div class="box1" >
+                살아있으나 숨 쉬지 않으며
+            </div>
+
+            <div class="box2" >
+                물고기
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                성역이 창조됐을 당시 앙기리스
+            </div>
+
+            <div class="box2" >
+                5
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                성역을 비추는 달의 수
+            </div>
+
+            <div class="box2" >
+                1
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                성역의 창조를 도운 악마
+            </div>
+
+            <div class="box2" >
+                릴리트
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                세계석은 여러이름
+            </div>
+
+            <div class="box2" >
+                수정 창
+            </div>
+        </div>
+
+    </div>
+    <div id="scrollspyHeading9" class="fill_set">
+        <h4 >ㅇ</h4>
+        <div>
+            <div class="box1" >
+                앙기리스 의회의 첫 수장
+                
+            </div>
+
+            <div class="box2" >
+                말티엘
+
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+              야만용사가 17명의 천사
+
+            </div>
+
+            <div class="box2" >
+                29
+
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                영원한 전쟁을 치르는
+
+            </div>
+
+            <div class="box2" >
+                바알
+ 
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                운명의 두루마리를 가진자
+
+            </div>
+
+            <div class="box2" >
+                이테리엘
+    
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                이 마법단은 최초의 성역
+
+            </div>
+
+            <div class="box2" >
+                비제레이
+    
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                이빨이 무성하나 물지 못하니
+
+            </div>
+
+            <div class="box2" >
+                빗
+
+            </div>
+        </div>
+
+        <div>
+            <div class="box1" >
+                이 천사는 인류의 탄생을 도왔
+            </div>
+
+            <div class="box2" >
+                이나리우스
+            </div>
+        </div>
+
+
+    </div>
+    <div id="scrollspyHeading10" class="fill_set">
+        <h4 >ㅈ</h4>
+        <div>
+            <div class="box1" >
+                정의의 대천사의 무기는 바로
+
+            </div>
+
+            <div class="box2" >
+                엘드루인
+
+            </div>
+        </div>
+        <div>
+            <div class="box1" >
+                절대 신뢰해서는 안되면 거짓
+
+            </div>
+
+            <div class="box2" >
+                벨리알
+
+            </div>
+        </div>
+        <div>
+            <div class="box1" >
+                주사위 놀이를 즐기는
+
+            </div>
+
+            <div class="box2" >
+                11
+            </div>
+        </div>
+        <div>
+            <div class="box1" >
+                지옥의 최고위 장군이자
+            </div>
+
+            <div class="box2" >
+
+                아즈모단
+            </div>
+        </div>
+
+    </div>
+    <div id="scrollspyHeading11" class="fill_set">
+        <h4 >ㅊ</h4>
+
+    </div>
+    <div id="scrollspyHeading12" class="fill_set">
+        <h4 >ㅋ</h4>
+        <div>
+        <div class="box1" >
+            케잔 남부는 무엇으로?
+        </div>
+
+        <div class="box2" >
+            정글스
+        </div>
+    </div>
+    </div>
+    <div id="scrollspyHeading13" class="fill_set">
+        <h4 >ㅌ</h4>
+    </div>
+    <div id="scrollspyHeading14" class="fill_set">
+        <h4 >ㅍ</h4>
+    </div>
+    <div id="scrollspyHeading15" class="fill_set">
+        <h4 >ㅎ</h4>
+        <div>
+            <div class="box1" >
+                호수를 품고 있으나
+
+            </div>
+
+            <div class="box2" >
+                지도
+
+            </div>
+        </div>
+        <div>
+            <div class="box1" >
+                희망의 화신이자
+            </div>
+
+            <div class="box2" >
+                아우리엘
+            </div>
+        </div>
+    </div>   
+</body>
