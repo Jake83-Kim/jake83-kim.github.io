@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날개 뽑기 상세 정보 - Full Data</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Noto+Serif+KR:wght@400;700&display=swap');
+
+        :root {
+            --bg-main: #0a0a0c;
+            --card-bg: #141619;
+            --accent: #bf1e2e; 
+            --blue: #4a90e2;   
+            --gold: #c3a36a;   
+            --gold-dim: #7a6341;
+            --main-text: #e3d9c6;
+            --border: #3a342a;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            background-image: radial-gradient(circle at center, rgba(191, 30, 46, 0.08) 0%, transparent 80%);
+            font-family: 'Noto Serif KR', serif;
+            color: var(--main-text);
+            margin: 0; padding: 0;
+            line-height: 1.6;
+        }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px; box-sizing: border-box; }
+
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 {
+            font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3rem); 
+            margin: 0; color: var(--gold); letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(195, 163, 106, 0.3);
+        }
+        .header p { color: var(--gold-dim); margin-top: 10px; font-size: 1rem; letter-spacing: 1px; }
+
+        /* 🖥️ PC 버전 테이블 */
+        .data-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--card-bg); border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .data-table th {
+            background: #1e2124; color: var(--gold);
+            padding: 12px 8px; border: 1px solid var(--border);
+            font-family: 'Cinzel', serif; font-size: 13px; white-space: nowrap;
+        }
+
+        .data-table td {
+            padding: 12px 8px; border: 1px solid #2a2a2a;
+            text-align: center; font-size: 14px;
+        }
+
+        .data-table tr:nth-child(even) { background: #1a1c20; }
+        .data-table tr:hover { background: #251a1a; transition: 0.2s; }
+
+        /* 📱 모바일 버전 카드 레이아웃 */
+        @media screen and (max-width: 1000px) {
+            .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+                display: block;
+            }
+            .data-table thead { display: none; }
+            .data-table tr {
+                margin-bottom: 25px; border: 1px solid var(--gold-dim);
+                padding: 5px; background: var(--card-bg) !important;
+            }
+            .data-table td {
+                text-align: right; padding: 10px 15px;
+                border: none; border-bottom: 1px solid rgba(255,255,255,0.05);
+                display: flex; justify-content: space-between; align-items: center;
+            }
+            .data-table td::before {
+                content: attr(data-label);
+                font-weight: 700; color: var(--gold-dim); font-size: 12px; flex: 1; text-align: left;
+            }
+            .data-table td[data-label="단계"] {
+                background: #1e2124; margin: -5px -5px 10px -5px;
+                justify-content: center; font-family: 'Cinzel'; font-size: 18px; color: var(--gold);
+            }
+            .data-table td[data-label="단계"]::before { display: none; }
+        }
+
+        /* 공통 스타일 클래스 */
+        .txt-blue { color: var(--blue); font-weight: 700; }
+        .txt-red { color: var(--accent); font-weight: 800; }
+        .txt-gold { color: var(--gold); font-weight: 700; }
+        .label-jin { background: rgba(195, 163, 106, 0.15); border: 1px solid var(--gold); padding: 2px 8px; border-radius: 3px; }
+
+        .footer { text-align: right; margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>WING DRAW INFO</h1>
+        <p>날개 뽑기 단계별 보상 및 현금 환산 상세 내역</p>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>단계</th><th>필요 점수</th><th>주요 보상 1</th><th>주요 보상 2</th><th>횟수</th>
+                <th>소모 보주</th><th>보상 보주</th><th>실질 소모</th><th>누적 소모</th><th>현금(원)</th><th>해석</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="단계">STEP 01</td>
+                <td data-label="필요 점수">4,000</td>
+                <td data-label="주요 보상 1">날개 저장 옵션 +1 (2슬롯)</td>
+                <td data-label="주요 보상 2">2단 날개</td>
+                <td data-label="횟수">9회</td>
+                <td data-label="소모 보주">1,440</td>
+                <td data-label="보상 보주" class="txt-blue">- 1,420</td>
+                <td data-label="실질 소모" class="txt-blue">20</td>
+                <td data-label="누적 소모" class="txt-red">20</td>
+                <td data-label="현금(원)">361</td>
+                <td data-label="해석">무과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 02</td>
+                <td data-label="필요 점수">4,500</td>
+                <td data-label="주요 보상 1">인벤토리 공간 +36</td>
+                <td data-label="주요 보상 2">날개 번개 효과</td>
+                <td data-label="횟수">40회</td>
+                <td data-label="소모 보주">6,400</td>
+                <td data-label="보상 보주" class="txt-blue">- 3,200</td>
+                <td data-label="실질 소모" class="txt-blue">3,200</td>
+                <td data-label="누적 소모" class="txt-red">3,220</td>
+                <td data-label="현금(원)">58,139</td>
+                <td data-label="해석">가성비</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 03</td>
+                <td data-label="필요 점수">5,000</td>
+                <td data-label="주요 보상 1">날개 저장 옵션 +1 (3슬롯)</td>
+                <td data-label="주요 보상 2">3단 날개</td>
+                <td data-label="횟수">40회</td>
+                <td data-label="소모 보주">6,400</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">6,400</td>
+                <td data-label="누적 소모" class="txt-red">9,620</td>
+                <td data-label="현금(원)">173,694</td>
+                <td data-label="해석">소과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 04</td>
+                <td data-label="필요 점수">5,800</td>
+                <td data-label="주요 보상 1">저장 날개 2개 자동 반복 표시</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">15회</td>
+                <td data-label="소모 보주">2,400</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">2,400</td>
+                <td data-label="누적 소모" class="txt-red">12,020</td>
+                <td data-label="현금(원)">217,028</td>
+                <td data-label="해석">소과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 05</td>
+                <td data-label="필요 점수">6,200</td>
+                <td data-label="주요 보상 1">보관함 탭 1개 추가</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">100회</td>
+                <td data-label="소모 보주">16,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">16,000</td>
+                <td data-label="누적 소모" class="txt-red">28,020</td>
+                <td data-label="현금(원)">505,917</td>
+                <td data-label="해석">준 중과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 06</td>
+                <td data-label="필요 점수">6,500</td>
+                <td data-label="주요 보상 1">저장 날개 3개 자동 반복 표시</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">100회</td>
+                <td data-label="소모 보주">16,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">16,000</td>
+                <td data-label="누적 소모" class="txt-red">44,020</td>
+                <td data-label="현금(원)">794,806</td>
+                <td data-label="해석">준 중과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 07</td>
+                <td data-label="필요 점수">7,000</td>
+                <td data-label="주요 보상 1">날개 진동 및 빛 방출 효과</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">120회</td>
+                <td data-label="소모 보주">19,200</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">19,200</td>
+                <td data-label="누적 소모" class="txt-red">63,220</td>
+                <td data-label="현금(원)">1,141,473</td>
+                <td data-label="해석">중과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 08</td>
+                <td data-label="필요 점수">7,500</td>
+                <td data-label="주요 보상 1">날개 주기적 광채 효과</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">100회</td>
+                <td data-label="소모 보주">16,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">16,000</td>
+                <td data-label="누적 소모" class="txt-red">79,220</td>
+                <td data-label="현금(원)">1,430,361</td>
+                <td data-label="해석">중과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 09</td>
+                <td data-label="필요 점수">7,800</td>
+                <td data-label="주요 보상 1">환영 날개 전용 채팅 채널</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">130회</td>
+                <td data-label="소모 보주">20,800</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">20,800</td>
+                <td data-label="누적 소모" class="txt-red">100,020</td>
+                <td data-label="현금(원)">1,805,917</td>
+                <td data-label="해석">고과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 10</td>
+                <td data-label="필요 점수">8,250</td>
+                <td data-label="주요 보상 1">이동 시 잔상 광채 방출</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">500회</td>
+                <td data-label="소모 보주">80,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">80,000</td>
+                <td data-label="누적 소모" class="txt-red">180,020</td>
+                <td data-label="현금(원)">3,250,362</td>
+                <td data-label="해석">고과금</td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 11</td>
+                <td data-label="필요 점수">8,650</td>
+                <td data-label="주요 보상 1">비전투 중 공중 부양</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">700회</td>
+                <td data-label="소모 보주">112,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">112,000</td>
+                <td data-label="누적 소모" class="txt-red">292,020</td>
+                <td data-label="현금(원)">5,272,585</td>
+                <td data-label="해석"><span class="txt-gold label-jin">진양철</span></td>
+            </tr>
+            <tr>
+                <td data-label="단계">STEP 12</td>
+                <td data-label="필요 점수">9,300</td>
+                <td data-label="주요 보상 1">비전투 시 자유 공중 비행</td>
+                <td data-label="주요 보상 2">-</td>
+                <td data-label="횟수">500회</td>
+                <td data-label="소모 보주">80,000</td>
+                <td data-label="보상 보주">-</td>
+                <td data-label="실질 소모" class="txt-blue">80,000</td>
+                <td data-label="누적 소모" class="txt-red">372,020</td>
+                <td data-label="현금(원)">6,717,029</td>
+                <td data-label="해석"><span class="txt-gold label-jin">진양철</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>* 기준: 1보주 = 18.05556원 / 데이터 출처: Myth 곽싸부</p>
+        <p>ⓒ 狂夜 Immortal Guide V2.7</p>
+    </div>
+</div>
+
+</body>
+</html>
