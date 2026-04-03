@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 와이어프레임</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 1. 기본 설정: 글자가 박스를 절대 벗어나지 않도록 강제 줄바꿈 */
+        * {
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        /* 2. 스크롤바 숨김 처리 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* 3. 와이어프레임 공통 스타일 */
+        .wf-box { border: 1px solid #d1d1d1; background: #ffffff; }
+        .wf-area { background: #f3f4f6; border: 1px dashed #cccccc; }
+        
+        /* 4. PC/모바일 대응 컨테이너 */
+        .app-wrapper {
+            width: 100%;
+            max-width: 430px; /* PC에서는 모바일 사이즈 유지 */
+            min-height: 100vh;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #e5e7eb;
+            border-right: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="app-wrapper shadow-2xl">
+        <header class="h-16 flex justify-between items-center px-5 border-b bg-white sticky top-0 z-30">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 wf-area rounded-full flex items-center justify-center text-[10px]">로고</div>
+                <span class="font-bold text-lg tracking-tight">서비스</span>
+            </div>
+            <div class="w-8 h-8 wf-area flex items-center justify-center text-[10px]">알림</div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto pb-24">
+            
+            <div class="p-5">
+                <div class="w-full h-12 wf-area rounded-lg flex items-center px-4 text-gray-400 text-sm">
+                    바 검색
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-3 px-5 mb-8">
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-full aspect-square wf-area rounded-xl flex items-center justify-center text-[10px]">아이콘</div>
+                    <span class="text-xs font-medium">와인</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-full aspect-square wf-area rounded-xl flex items-center justify-center text-[10px]">아이콘</div>
+                    <span class="text-xs font-medium">칵테일</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-full aspect-square wf-area rounded-xl flex items-center justify-center text-[10px]">아이콘</div>
+                    <span class="text-xs font-medium">위스키</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-full aspect-square wf-area rounded-xl flex items-center justify-center text-[10px]">아이콘</div>
+                    <span class="text-xs font-medium">맥주</span>
+                </div>
+            </div>
+
+            <section class="mb-10">
+                <div class="flex justify-between items-center px-5 mb-4">
+                    <h2 class="font-extrabold text-base">추천 장소</h2>
+                    <span class="text-[10px] text-gray-400">전체보기 ></span>
+                </div>
+                
+                <div class="flex gap-4 overflow-x-auto px-5 no-scrollbar">
+                    <article class="min-w-[260px] max-w-[260px] wf-box rounded-2xl overflow-hidden flex-shrink-0 shadow-sm">
+                        <div class="h-40 wf-area flex items-center justify-center text-xs text-gray-400">이미지</div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2 gap-2">
+                                <h3 class="font-bold text-sm leading-tight flex-1">더 블루 라운지 청담점</h3>
+                                <span class="text-xs font-bold whitespace-nowrap">★ 4.8</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 leading-5">감각적인 인테리어와 시그니처 칵테일이 매력적인 공간입니다. 주차 가능합니다.</p>
+                        </div>
+                    </article>
+
+                    <article class="min-w-[260px] max-w-[260px] wf-box rounded-2xl overflow-hidden flex-shrink-0 shadow-sm">
+                        <div class="h-40 wf-area flex items-center justify-center text-xs text-gray-400">이미지</div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2 gap-2">
+                                <h3 class="font-bold text-sm leading-tight flex-1">빈티지 바 한남</h3>
+                                <span class="text-xs font-bold whitespace-nowrap">★ 4.5</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 leading-5">한남동 골목에 위치한 조용하고 아늑한 위스키 전문 바입니다.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="px-5">
+                <h2 class="font-extrabold text-base mb-4">최근 리뷰</h2>
+                <div class="space-y-4">
+                    <div class="p-5 wf-box rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full wf-area flex-shrink-0"></div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-bold truncate">김지민</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-tighter">2시간 전</p>
+                            </div>
+                            <div class="text-[10px]">★★★★★</div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs leading-6 text-gray-700">
+                                여기 분위기 정말 미쳤어요! 혼자 가기도 좋고 칵테일 설명도 친절하게 해주셔서 너무 좋았습니다. 
+                                재방문 의사 200% 입니다. 공간이 넓어서 쾌적해요.
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="w-20 h-20 wf-area rounded-xl flex-shrink-0"></div>
+                            <div class="w-20 h-20 wf-area rounded-xl flex-shrink-0"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <button class="absolute bottom-28 right-5 w-14 h-14 wf-box bg-white rounded-2xl flex items-center justify-center shadow-xl text-xs font-black z-40">
+            지도
+        </button>
+
+        <nav class="h-20 bg-white border-t flex justify-around items-center px-4 sticky bottom-0 z-50">
+            <div class="flex flex-col items-center gap-1 opacity-100">
+                <div class="w-6 h-6 wf-area rounded-md"></div>
+                <span class="text-[10px] font-bold">홈</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40">
+                <div class="w-6 h-6 wf-area rounded-md"></div>
+                <span class="text-[10px]">검색</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40">
+                <div class="w-6 h-6 wf-area rounded-md"></div>
+                <span class="text-[10px]">이벤트</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40">
+                <div class="w-6 h-6 wf-area rounded-md"></div>
+                <span class="text-[10px]">마이</span>
+            </div>
+        </nav>
+    </div>
+
+</body>
+</html>
